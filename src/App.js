@@ -1,3 +1,5 @@
+/* eslint no-eval : 0 */
+
 import React from 'react';
 import store from './store';
 import './App.css';
@@ -34,26 +36,35 @@ class  App extends React.Component {
     }
 
     else if (value === 'C') {output.value = '0'}
-    else if (value === '=') {output.value = eval(output.value)}
-
+    else if (value === '=')  {     
+       try  {output.value = eval(output.value)}
+       catch {
+           output.value = 'ABSURD'
+           setTimeout( () => {
+               output.value = '0'
+           },  1500)
+          }
+      }
   }
-  
-
 
   render() {
     return(
-       <div className="container">
+      <div className='all-cover'>
+        <div className="container">
            <div className="output">
               <input ref={this.refOutput} type="text" defaultValue={this.state.out} />
            </div>
            <div className='buttons'>
-               {store.buttons.map(item => <button
-               onClick={() => {this.tapeNumber(item.val)}}
+               {store.buttons.map((item, index) => <button
+                  key={index}
+                  onClick={() => {this.tapeNumber(item.val)}}
                >{item.val}</button>)}
-               {store.operations.map(item => <button
-               onClick={() => {this.tapeOperations(item.val)}}
+               {store.operations.map((item , index) => <button
+                  key={index}
+                  onClick={() => {this.tapeOperations(item.val)}}
                >{item.val}</button>)}
            </div>
+       </div>
        </div>
     )
   }

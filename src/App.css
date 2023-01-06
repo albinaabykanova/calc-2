@@ -1,18 +1,32 @@
+.all-cover {
+    margin: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background: linear-gradient(45deg,  #ee7752, #e73c7e, #23a6d5, #23d5ab) !important;
+    background-size: 500% 500% !important;
+    animation: all-coverBG 20s ease infinite !important;
+    animation-duration: alternate !important;
+}
+
+@keyframes all-coverBG {
+   0% {background-position: 0% !important;}
+   100% {background-position: 100% !important;}
+}
+
 .container {
-   width: 200px;
+   width: 300px;
    margin-left: auto;
    margin-right: auto;
-   margin-top: 12rem;
-   padding: 16px;
-
+   margin-top: 3rem;
+   padding: 6px;
    text-align: center;
-   background: darkgrey;
-   border: 1px solid dimgrey;
-   border-radius: 5px;
+   border: 1px solid rgba(105, 105, 105, 0.463);
+   border-radius: 15px;
+   background-image: repeating-conic-gradient(red 10%, yellow 20%);  
 }
 
 .output {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 input {
@@ -20,6 +34,6 @@ input {
 }
 
 button {
-  margin: 2px;
-  width: 2rem;
+  margin: 20px;
+  width: 3rem;
 }
