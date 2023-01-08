@@ -6,6 +6,11 @@ import './App.css';
 
 class  App extends React.Component {
 
+
+ /*  calculate created with react  */
+
+
+
   constructor() {
      super()
      this.state = {
