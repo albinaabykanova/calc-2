@@ -5,7 +5,7 @@ import store from './store';
 import './App.css';
 
 class  App extends React.Component {
-
+  
 
  /*  calculate created with react  */
 
